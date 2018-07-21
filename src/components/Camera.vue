@@ -40,7 +40,7 @@ export default {
             const height = this.$refs.video.videoHeight / (this.$refs.video.videoWidth / width)
             this.canvas.setAttribute('width', width)
             this.canvas.setAttribute('height', height)
-            this.canvasContext.drawImage(this.$refs.vizdeo, 0, 0, width, height)
+            this.canvasContext.drawImage(this.$refs.video, 0, 0, width, height)
             this.setPhoto(this.canvas.toDataURL('image/png'))
         },
     },
