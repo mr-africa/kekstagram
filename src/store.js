@@ -9,7 +9,7 @@ const store = new Vuex.Store({
         filter: '',
     },
     getters: {
-        photoBlolb (state) {
+        photo (state) {
             return state.photo
         },
         filter (state) {

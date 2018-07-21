@@ -23,15 +23,11 @@
 <script>
 
 import { mapGetters, mapMutations } from 'vuex'
-import blobToSrc from '@/utils'
 
 export default {
     name: 'photo',
     computed: {
-        ...mapGetters(['photoBlolb', 'filter']),
-        photo () {
-            return blobToSrc(this.photoBlolb)
-        },
+        ...mapGetters(['photo', 'filter']),
     },
     methods: {
         ...mapMutations(['clearPhoto']),

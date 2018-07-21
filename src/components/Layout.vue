@@ -8,8 +8,8 @@
             <v-spacer></v-spacer>
             <fork-me-on-github url="https://github.com/mr-africa/kekstagram" />
         </v-toolbar>
-        <camera v-if="!photoBlolb" />
-        <div v-if="photoBlolb">
+        <camera v-if="!photo" />
+        <div v-if="photo">
             <photo />
             <gallery />
         </div>
@@ -29,7 +29,7 @@ export default {
     components: { Camera, Gallery, Photo, ForkMeOnGithub },
 
     computed: {
-        ...mapGetters(['photoBlolb']),
+        ...mapGetters(['photo']),
     },
 }
 </script>

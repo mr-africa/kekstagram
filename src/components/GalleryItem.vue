@@ -20,7 +20,6 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import blobToSrc from '@/utils'
 
 export default {
     name: 'gallery-item',
@@ -28,10 +27,7 @@ export default {
         filter: String,
     },
     computed: {
-        ...mapGetters(['photoBlolb']),
-        photo () {
-            return blobToSrc(this.photoBlolb)
-        },
+        ...mapGetters(['photo']),
         name () {
             return this.filter === '' ? 'Normal' : this.filter
         },

@@ -21,7 +21,6 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import { ImageCapture } from 'image-capture'
 
 export default {
     name: 'camera',
@@ -31,13 +30,19 @@ export default {
         const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true })
         this.$refs.video.srcObject = mediaStream
         this.$refs.video.play()
-        this.imageCapture = new ImageCapture(mediaStream.getVideoTracks()[0])
+        this.canvas = document.createElement('canvas')
+        this.canvasContext = this.canvas.getContext('2d')
+
     },
     methods: {
         ...mapMutations(['setPhoto']),
-        async takePhoto () {
-            const photo = await this.imageCapture.takePhoto()
-            this.setPhoto(photo)
+        takePhoto () {
+            const width = 320
+            const height = this.$refs.video.videoHeight / (this.$refs.video.videoWidth / width)
+            this.canvas.setAttribute('width', width)
+            this.canvas.setAttribute('height', height)
+            this.canvasContext.drawImage(this.$refs.video, 0, 0, width, height)
+            this.setPhoto(this.canvas.toDataURL('image/png'))
         },
     },
 }
