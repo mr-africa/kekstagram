@@ -32,7 +32,6 @@ export default {
         this.$refs.video.play()
         this.canvas = document.createElement('canvas')
         this.canvasContext = this.canvas.getContext('2d')
-
     },
     methods: {
         ...mapMutations(['setPhoto']),

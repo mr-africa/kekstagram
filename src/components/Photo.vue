@@ -1,11 +1,10 @@
 <template>
     <v-card>
-        <v-card-media
-            :src="photo"
-            contain
-            height="500"
-            :class="filter"
-        />
+        <v-card-media>
+            <figure :class="filter">
+                <img :src="photo">
+            </figure>
+        </v-card-media>
         <v-card-actions>
             <v-btn
                 flat
