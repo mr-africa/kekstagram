@@ -4,6 +4,7 @@
             :src="photo"
             contain
             height="500"
+            :class="filter"
         />
         <v-card-actions>
             <v-btn
@@ -22,13 +23,14 @@
 <script>
 
 import { mapGetters, mapMutations } from 'vuex'
+import blobToSrc from '@/utils'
 
 export default {
     name: 'photo',
     computed: {
-        ...mapGetters(['photoBlolb']),
+        ...mapGetters(['photoBlolb', 'filter']),
         photo () {
-            return URL.createObjectURL(this.photoBlolb)
+            return blobToSrc(this.photoBlolb)
         },
     },
     methods: {

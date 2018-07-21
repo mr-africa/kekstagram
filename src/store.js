@@ -6,20 +6,20 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         photo: null,
-        activeFilter: null,
+        filter: '',
     },
     getters: {
         photoBlolb (state) {
             return state.photo
         },
-        activeFilter (state) {
-            return state.activeFilter
+        filter (state) {
+            return state.filter
         },
     },
 
     mutations: {
         setFilter (state, filter) {
-            state.activeFilter = filter
+            state.filter = filter
         },
         clearPhoto (state) {
             state.photo = null
