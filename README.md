@@ -1,6 +1,6 @@
 # kekstagram
 
-> A Vue.js project
+https://mr-africa.github.io/kekstagram/
 
 ## Build Setup
 
