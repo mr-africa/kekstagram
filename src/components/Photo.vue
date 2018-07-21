@@ -1,7 +1,7 @@
 <template>
     <v-card>
         <v-card-media>
-            <figure :class="filter">
+            <figure :class="filter" class="main-photo">
                 <img :src="photo">
             </figure>
         </v-card-media>
@@ -33,3 +33,9 @@ export default {
     },
 }
 </script>
+<style>
+.main-photo {
+    margin: 0 auto;
+    display: block;
+}
+</style>
