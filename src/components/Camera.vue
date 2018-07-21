@@ -21,6 +21,7 @@
 
 <script>
 import { mapMutations } from 'vuex'
+import { ImageCapture } from 'image-capture'
 
 export default {
     name: 'camera',
